@@ -1,4 +1,4 @@
-# Read a file and print its contents
+# Read a file and print its contents b
 print("Select file from drive")
 #filename = input("Enter file name >")
 try:
@@ -14,3 +14,4 @@ for line in fhandl:
 
 print("Done!")
 # -------------------------------------------------------------------------------
+print('test')
