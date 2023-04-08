@@ -13,7 +13,6 @@ print("simpleList[4] = ", simpleList[4])
 
 print(type(simpleList[4]))
 
-
 # simpleList[0:3] = ['red', 'green']
 print("simpleList[0:3] = ", simpleList[0:3])
 
@@ -31,7 +30,7 @@ print("simpleList[-1] = ", simpleList[-1])
 simpleList.insert( 6,"new value")
 print("New item added to list",simpleList)
 
-#we can remove value from list by item value
+#We can remove value from list by item value
 simpleList.remove( "new value")
 print("one item removed from list by value",simpleList)
 #print('check this one ------------------>')

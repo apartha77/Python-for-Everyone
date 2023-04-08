@@ -6,29 +6,29 @@ for x in simpleSet:
   print(x)
 
 #we can add or remove values
-
 simpleSet.add(10)
-print(simpleSet)
+print(" After adding 10 ", simpleSet)
 
 simpleSet.remove(10)
-print(simpleSet)
+print("After removing 10  ", simpleSet)
 
 #eliminate duplicates
 simpleSet2 = {1, 2,2, 3, 3, 3, 4, 4, 4,4, 5,5,5,5,5 }
-print(simpleSet2)
+print("Set eliminates Duplicate values in the set ",simpleSet2)
 print('Math Operations ------------------>')
 #set can be used for mathematic set operations
+print("Set is being used for Mathametical Operatioins such as union, intersection, difference")
 #uninon
 setA = {1, 2, 3, 4, 5, 6}
 setB = {4, 5, 6, 7, 8, 9}
-print(setA.union(setB))
+print("Example of Union", setA.union(setB))
 print(setB.union(setA))
 #intersection
-print(setA.intersection(setB))
+print("Example of Intersection", setA.intersection(setB))
 print(setB.intersection(setA))
 #differece
-print(setA.difference(setB))
+print("Example of Difference", setA.difference(setB))
 print(setB.difference(setA))
 #Symmetric difference 
-print(setA.symmetric_difference(setB))
+print("Example of Symmetric difference ",setA.symmetric_difference(setB))
 print(setB.symmetric_difference(setA))

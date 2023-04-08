@@ -1,5 +1,4 @@
 # Dictionary Data Types
-# 
 person = {
 "name": "Partha",
 "age": 43,
@@ -10,14 +9,14 @@ print(type(person['name']))
 print(type(person["age"]))
 
 #get values in disctionary by key
-print(person["name"])
+print("Value by key ", person["name"])
 
 # We can check key of a dictionary using the in keyword
-print("name" in person)
+print("Check by keyword - name ", "name" in person)
 
 #chage value of a dictionary
 person["age"] = 44
-print("Age value changed",person["age"])
+print("Age value changed ",person["age"])
 
 person.update({"age": 45})
 print("Value of Age changed by using dictionary.update ",person["age"])
