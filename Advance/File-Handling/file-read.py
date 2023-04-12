@@ -4,7 +4,6 @@ myfile = open("sample_file.txt","r")
 print(myfile.read())
 myfile.close()
 
-
 #read file by full path
 # f = open("/Users/parthadas/Documents/Partha/01. Technical/Projects/Python/Python-for-Everyone/Advance/File-Handling/sample_file.txt", "r")
 # print(f.read())

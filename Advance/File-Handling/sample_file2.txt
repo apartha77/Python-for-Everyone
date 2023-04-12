@@ -1,0 +1,6 @@
+Hello all this is a simple text file to test file handling.
+Simple file operations will be executed on this file.
+Each sentence is separated by a new line.
+We will soon see the number of lines, words, even each alphabets in action. This line added by python program 
+
+ This line added by python program
