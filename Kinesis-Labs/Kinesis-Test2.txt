@@ -1,0 +1,43 @@
+Creae Policy - The required permission for Kinesis Agent to put data into a stream is PutRecords.
+The PutMetricsData is needed for CloudWatch to publish metric data points, if CloudWatch monitoring is enabled for 
+the Kinesis Agent.
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "cloudwatch:PutMetricData",
+                "kinesis:PutRecords"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+--------------------------
+Kinesis Agent.jason for configuration with the Kinesis DataStream
+{
+    "cloudwatch.emitMetrics":true,
+    "kinesis.endpoint":"https://kinesis.us-east-1.amazonaws.com",
+    "flows":[
+       {
+          "filePattern":"/opt/stream-1/logfile.log",
+          "kinesisStream":"stream-1"
+       }
+    ]
+ }  
+---------------------------------
+Change the persission 
+sudo chmod 
+sudo chown aws-kinesis-agent-user:aws-kinesis-agent-user -R /opt/stream-1
+
+----------------------------------
+Run python to populate the logfile
+sudo python3 /opt/stream-1/stream-1.py &
+------------------------------------
+sudo service aws-kinesis-agent start
+-----to keep it running after restart - 
+sudo chkconfig aws-kinesis-agent on 
+-------------------------------------

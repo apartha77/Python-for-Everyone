@@ -1,0 +1,78 @@
+kinesis agent details:
+https://docs.aws.amazon.com/streams/latest/dev/writing-with-agents.html
+
+//=================================================================
+for firehsoe example
+
+//====================================================
+{
+  "cloudwatch.emitMetrics": true,
+  "kinesis.endpoint": "",
+  "firehose.endpoint": "firehose.us-east-1.amazonaws.com",
+  
+  "flows": [
+    {
+      "filePattern": "/var/log/cadabra/*log",
+      "kinesisStream": "CaOrders",
+      "partitionKeyOptions": "RANDOM",
+      "dataProcessingOptions": [
+        {
+                "optoinName": "CSVTOJSOM",
+                "customFieldNames":["InvoiceNo", "StockCode", "Description", "Quantity", "InvoiceDate", "UnitPrice", "Customer", "Country"]
+        }
+        ]
+    },
+    {
+        "filePattern": "/var/log/cadabra/*log",
+        "deliveryStream": "Purchaselogs"
+    }
+  ]
+}
+=========
+sudo yum install aws-kinesis-agent
+Log Generator - wget http://media.sundog-soft.com/AWSBigData/LogGenerator.zip
+
+-----------
+kinesis agent for firehose logs - mention endpoint region, log path, firehose name
+{
+  "cloudwatch.emitMetrics": true,
+  "kinesis.endpoint": "",
+  "firehose.endpoint": "firehose.us-east-1.amazonaws.com",
+  
+  "flows": [
+    {
+      "filePattern": "/var/log/cadabra/*.log",
+      "deliveryStream": "Purchaselogs"
+    }
+  ]
+}
+start kinesis agent - sudo service aws-kinesis-agent start 
+to keep it running after restart - sudo chkconfig aws-kinesis-agent on 
+-----------------
+For Kinesis stream example
+{
+  "cloudwatch.emitMetrics": true,
+  "kinesis.endpoint": "",
+  "firehose.endpoint": "firehose.us-east-1.amazonaws.com",
+  
+  "flows": [
+    {
+      "filePattern": "/var/log/cadabra/*.log",
+      "kinesisStream": "CaOrders",
+      "partitionKeyOptions": "RANDOM",
+      "dataProcessingOptions": [
+        {
+          "optoinName": "CSVTOJSOM",
+          "customFieldNames":["InvoiceNo", "StockCode", "Description", "Quantity", "InvoiceDate", "UnitPrice", "Customer", "Country"]
+        }
+        ]
+    },
+    {
+      "filePattern": "/var/log/cadabra/*.log",
+      "deliveryStream": "Purchaselogs"
+    }
+  ]
+}
+
+put the log path and stream name. put csvtojson and the fields. 
+-------------------------------------
