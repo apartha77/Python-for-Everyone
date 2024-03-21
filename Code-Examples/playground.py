@@ -1,3 +1,9 @@
+import boto3
+
+sns = boto3.client('sns')
+
+
+
 # Type check
 simpleList = ("red", "green", "blue", 4, 5, 6)
 
